@@ -1,0 +1,6 @@
+A simple PHP 5.3 Singleton Factory :
+
+Exemple : 
+<code>
+$dom = Singleton::DOMDocument()->loadHTMLFile($url);
+</code>
