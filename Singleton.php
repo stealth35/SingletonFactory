@@ -7,12 +7,12 @@ class Singleton
     {    
         if(empty(static::$_instances[$name]) || !empty($arguments))
         {
-                if(strpos($name, '\\') === 0)
-                {
+            if(strpos($name, '\\') === 0)
+            {
                 $name = substr($name, 1);
-                }
+            }
                
-                $classname = '\\' . $name;
+            $classname = '\\' . $name;
 
             if(method_exists($classname, '__construct'))
             {
