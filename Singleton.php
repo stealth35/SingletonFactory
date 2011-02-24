@@ -1,4 +1,8 @@
 <?php
+/*
+ * SingletonFacotry
+ * @author stealth35, Benjamin Delespierre
+ */
 class Singleton
 {
     protected static $_instances;
