@@ -25,7 +25,7 @@ class Singleton
             }
             else
             {
-                static::$_instances[$name] = new \$classname;
+                static::$_instances[$name] = new $classname;
             }
         }
 
