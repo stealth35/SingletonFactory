@@ -1,6 +1,6 @@
 <?php
 /*
- * SingletonFacotry
+ * SingletonFactory
  * @author stealth35, Benjamin Delespierre
  */
 class Singleton
