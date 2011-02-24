@@ -6,26 +6,22 @@
 class Singleton
 {
     protected static $_instances;
+    public static $namespace = __NAMESPACE__;
    
-    public static function __callStatic($name, array $arguments)
+    public static function __callStatic($name, array $arguments = array())
     {    
+        $name = ltrim(static::$namespace, '\\') . '\\' . ltrim($name, '\\');
+        
         if(empty(static::$_instances[$name]) || !empty($arguments))
         {
-            if(strpos($name, '\\') === 0)
+            if(method_exists($name, '__construct'))
             {
-                $name = substr($name, 1);
-            }
-               
-            $classname = '\\' . $name;
-
-            if(method_exists($classname, '__construct'))
-            {
-                $class = new \ReflectionClass($classname);
+                $class = new \ReflectionClass($name);
                 static::$_instances[$name] = $class->newInstanceArgs($arguments);
             }
             else
             {
-                static::$_instances[$name] = new $classname;
+                static::$_instances[$name] = new $name;
             }
         }
 
