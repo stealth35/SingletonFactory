@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * SingletonFactory
  * @author stealth35, Benjamin Delespierre
  */
