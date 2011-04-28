@@ -2,7 +2,7 @@ A simple PHP 5.3 Singleton Factory
 ==================================
 
 Exemple
-=======
+-------
 
 ``` php
 <?php
